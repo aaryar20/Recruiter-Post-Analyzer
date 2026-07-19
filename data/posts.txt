@@ -1,0 +1,35 @@
+Hiring!!
+
+Java Developer
+Contract
+
+Location: Dallas, TX
+
+Skills:
+Java
+Spring Boot
+AWS
+Docker
+Kafka
+
+Email:
+java@company.com
+
+----------------------------------------
+
+Hiring!!
+
+Python Developer
+Remote
+
+Location: Austin, TX
+
+Skills:
+Python
+FastAPI
+PostgreSQL
+Redis
+Docker
+
+Email:
+python@company.com
