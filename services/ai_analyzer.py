@@ -1,18 +1,20 @@
 import os
 import json
+import streamlit as st
 from dotenv import load_dotenv
 from google import genai
 
 load_dotenv()
 
-API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = st.secrets.get("GEMINI_API_KEY") or os.getenv("GEMINI_API_KEY")
 
-if not API_KEY:
-    raise ValueError("GEMINI_API_KEY not found in .env")
-
-client = genai.Client(api_key=API_KEY)
+client = genai.Client(api_key=API_KEY) if API_KEY else None
 
 def analyze_job(text):
+    if client is None:
+        raise RuntimeError(
+            "Gemini API key not configured. Please add GEMINI_API_KEY."
+        )
 
     prompt = f"""
 You are an expert technical recruiter.
